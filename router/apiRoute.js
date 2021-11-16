@@ -23,9 +23,9 @@ router.get("/api", async function (req, res) {
 
       filter.push(newObj);
     }
-    return res.status(200).json({ a: filter });
+    return res.status(200).json({ success: true, data: filter });
   } catch (err) {
-    console.log(err);
+    return res.status(404).json({ success: false, msg: err });
   }
 });
 
